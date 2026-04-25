@@ -1,16 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Hero } from "@/components/sections/Hero";
+import { ServicesOverview } from "@/components/sections/ServicesOverview";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { ClientLogoWall } from "@/components/sections/ClientLogoWall";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { FomoBanner } from "@/components/sections/FomoBanner";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { SEO } from "@/components/SEO";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <SEO
+        title="Techcare General Trading L.L.C — ISO Certified UAE Trading Partner"
+        description="ISO 9001:2015 certified Dubai-based trading company supplying construction, solar, food, safety, electrical and industrial products across the UAE."
+      />
+      <Hero />
+      <ServicesOverview />
+      <WhyChooseUs />
+      <ClientLogoWall />
+      <Testimonials />
+      <FomoBanner />
+      <ContactSection />
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
