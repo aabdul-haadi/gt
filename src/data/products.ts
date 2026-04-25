@@ -16,17 +16,17 @@ import {
 } from "lucide-react";
 
 // @ts-ignore
-import constructionImg from "@/assets/products/construction.jpg";
+import constructionImg from "@/assets/products/Construction Materials.webp";
 // @ts-ignore
-import foodImg from "@/assets/products/food.jpg";
+import foodImg from "@/assets/products/Food Products.webp";
 // @ts-ignore
-import solarImg from "@/assets/products/SOLAR-2.jpg";
+import solarImg from "@/assets/products/solar-pannel.webp";
 // @ts-ignore
-import toolsImg from "@/assets/products/tools.jpg";
+import toolsImg from "@/assets/products/Construction Tools.webp";
 // @ts-ignore
-import paintImg from "@/assets/products/paint.jpg";
+import paintImg from "@/assets/products/Paints & Finishes.webp";
 // @ts-ignore
-import waterproofingImg from "@/assets/products/waterproofing.jpg";
+import waterproofingImg from "@/assets/products/Waterproofing Materials.webp";
 
 
 export type ProductCategory = {
