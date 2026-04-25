@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/QuoteDialog";
-import heroImg from "@/assets/hero-warehouse.jpg";
+import heroImg from "/assets/hero-warehouse.jpg";
 
 export const Hero = () => {
   return (
