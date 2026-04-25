@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { QuoteDialog } from "@/components/QuoteDialog";
 import { Button } from "@/components/ui/button";
-import fomoBg from "@/assets/hero-warehouse.jpg";
+import fomoBg from "/assets/hero-warehouse.jpg";
 
 export const FomoBanner = () => (
   <section className="relative isolate bg-slate-900 text-white">
