@@ -1,22 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import why1 from "@/assets/home-page/why-1.webp";
+import why2 from "@/assets/home-page/why-2.webp";
+import why3 from "@/assets/home-page/why-3.webp";
 
 const features = [
   {
     title: "Real Time Tracking",
     desc: "Global supplier network ensures availability, choice and continuity for every project.",
-    image: "src/assets/home-page/why-1.webp",
+    image: why1,
   },
   {
     title: "Proven Reliability",
     desc: "ISO 9001:2015 quality management — every shipment held to internationally audited standards.",
-    image: "src/assets/home-page/why-2.webp",
+    image: why2,
   },
   {
     title: "End to End Service",
     desc: "Direct sourcing relationships and bulk leverage translate into priority pricing for our clients.",
-    image: "src/assets/home-page/why-3.webp",
+    image: why3,
   },
 ];
 

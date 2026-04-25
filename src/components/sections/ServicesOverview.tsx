@@ -27,7 +27,7 @@ export const ServicesOverview = () => {
               className="relative group rounded-xl overflow-hidden shadow-card"
             >
               <img
-                src={`/src/assets/products/${c.name}.webp`}
+                src={c.image} // Use the imported image from the data file
                 alt={c.name}
                 className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-300"
               />
