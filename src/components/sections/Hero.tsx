@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/QuoteDialog";
-import heroImg from "@/assets/hero-warehouse.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative isolate bg-slate-900">
       <img
-        src={heroImg}
+        src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80"
         alt="Warehouse with construction materials and steel supplies in Dubai, illustrating a general trading company's inventory."
         className="absolute inset-0 h-full w-full object-cover opacity-25"
         width={1920}

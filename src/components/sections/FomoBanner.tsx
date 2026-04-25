@@ -1,13 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { QuoteDialog } from "@/components/QuoteDialog";
 import { Button } from "@/components/ui/button";
-import fomoBg from "/assets/hero-warehouse.jpg";
 
 export const FomoBanner = () => (
   <section className="relative isolate bg-slate-900 text-white">
     {/* Background Image with Overlay */}
     <img
-      src={fomoBg}
+      src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80"
       alt="Consultation background showing construction materials"
       className="absolute inset-0 h-full w-full object-cover opacity-20"
       width={1920}
