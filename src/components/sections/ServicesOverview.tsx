@@ -9,7 +9,7 @@ export const ServicesOverview = () => {
       <div className="container-page">
         <div className="max-w-2xl mb-12">
           <span className="eyebrow">What We Supply</span>
-          <h2 className="mt-3 text-3xl md:text-4xl">
+          <h2 className="mt-3 text-3xl md:text-4xl text-slate-900">
             A complete trading portfolio for the UAE’s most demanding sectors
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -20,27 +20,27 @@ export const ServicesOverview = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {featured.map((c) => {
-            const Icon = c.icon;
-            return (
-              <Link
-                key={c.slug}
-                to={`/products/${c.slug}`}
-                className="group bg-card rounded-xl p-6 border border-border card-hover flex flex-col"
-              >
-                <div className="h-12 w-12 rounded-lg bg-secondary text-primary grid place-items-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-4 text-lg">{c.name}</h3>
-                <p className="mt-1.5 text-sm text-muted-foreground flex-1">
-                  {c.description}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
-                  View All Products <ArrowRight className="h-4 w-4" />
+          {featured.map((c) => (
+            <Link
+              key={c.slug}
+              to={`/products/${c.slug}`}
+              className="relative group rounded-xl overflow-hidden shadow-card"
+            >
+              <img
+                src={`/src/assets/products/${c.name}.webp`}
+                alt={c.name}
+                className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <h3 className="text-white font-semibold text-lg">{c.name}</h3>
+                <p className="text-white/80 text-sm mt-1">{c.short}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:gap-2.5 transition-all">
+                  Explore <ArrowRight className="h-4 w-4" />
                 </span>
-              </Link>
-            );
-          })}
+              </div>
+            </Link>
+          ))}
         </div>
 
         <div className="text-center mt-10">

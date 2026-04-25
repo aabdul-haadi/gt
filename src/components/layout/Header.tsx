@@ -1,11 +1,12 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, ChevronDown, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { productCategories } from "@/data/products";
 import { company } from "@/data/company";
 import { QuoteDialog } from "@/components/QuoteDialog";
 import { cn } from "@/lib/utils";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -44,7 +45,7 @@ export const Header = () => {
       )}
     >
       {/* Top utility bar */}
-      <div className="hidden md:block bg-primary text-primary-foreground text-xs">
+      <div className="hidden md:block bg-secondary text-primary-foreground text-xs">
         <div className="container-page flex items-center justify-between py-1.5">
           <span className="opacity-90">{company.iso} · Dubai, UAE</span>
           <div className="flex items-center gap-4">
@@ -60,9 +61,7 @@ export const Header = () => {
 
       <div className="container-page flex h-16 md:h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="h-10 w-10 rounded-md bg-gradient-accent text-accent-foreground grid place-items-center font-display font-extrabold shadow-accent">
-            T
-          </div>
+          <img src="/logo.webp" alt="Techcare logo" className="h-12 w-12 rounded-full object-cover" />
           <div className="leading-tight">
             <div className="font-display font-extrabold text-primary text-base md:text-lg">
               TECHCARE
@@ -104,9 +103,9 @@ export const Header = () => {
                           <Link
                             key={c.slug}
                             to={`/products/${c.slug}`}
-                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-secondary transition-colors group"
+                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-gray-100 transition-colors group"
                           >
-                            <div className="h-9 w-9 rounded-md bg-secondary text-primary grid place-items-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                            <div className="h-9 w-9 rounded-md bg-secondary text-white grid place-items-center">
                               <Icon className="h-4.5 w-4.5" />
                             </div>
                             <div>
@@ -144,49 +143,65 @@ export const Header = () => {
 
         <div className="hidden lg:block">
           <QuoteDialog>
-            <Button className="bg-accent hover:bg-accent-glow text-accent-foreground shadow-accent font-semibold">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-accent font-semibold">
               Request a Quote
             </Button>
           </QuoteDialog>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden p-2 -mr-2 text-primary"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <div className="container-page py-3 flex flex-col">
-            {nav.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                end={item.to === "/"}
-                className={({ isActive }) =>
-                  cn(
-                    "py-2.5 text-sm font-semibold border-b border-border/60 last:border-0",
-                    isActive ? "text-accent" : "text-foreground"
-                  )
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <QuoteDialog>
-              <Button className="mt-3 w-full bg-accent hover:bg-accent-glow text-accent-foreground font-semibold">
-                Request a Quote
-              </Button>
-            </QuoteDialog>
-          </div>
+        {/* Mobile toggle & menu */}
+        <div className="lg:hidden">
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <button className="p-2 -mr-2 text-primary" aria-label="Toggle menu">
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-3/4 max-w-xs bg-background p-0">
+                <div className="flex flex-col h-full">
+                    <div className="p-4 border-b">
+                      <Link to="/" className="flex items-center gap-2.5 group">
+                        <img src="/logo.webp" alt="Techcare logo" className="h-12 w-12 rounded-full object-cover" />
+                        <div className="leading-tight">
+                          <div className="font-display font-extrabold text-primary text-base">
+                            TECHCARE
+                          </div>
+                          <div className="text-[10px] text-muted-foreground tracking-[0.18em] uppercase -mt-0.5">
+                            General Trading
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                    <nav className="p-4 flex-grow">
+                        {nav.map((item) => (
+                          <NavLink
+                            key={item.to}
+                            to={item.to}
+                            end={item.to === "/"}
+                            onClick={() => setOpen(false)}
+                            className={({ isActive }) =>
+                              cn(
+                                "block py-2.5 text-base font-semibold border-b border-border/60 last:border-0",
+                                isActive ? "text-accent" : "text-foreground"
+                              )
+                            }
+                          >
+                            {item.label}
+                          </NavLink>
+                        ))}
+                    </nav>
+                    <div className="p-4 mt-auto border-t">
+                        <QuoteDialog>
+                          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                            Request a Quote
+                          </Button>
+                        </QuoteDialog>
+                    </div>
+                </div>
+            </SheetContent>
+          </Sheet>
         </div>
-      )}
+      </div>
     </header>
   );
 };

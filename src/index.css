@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 /* Techcare General Trading – Design System
- * Primary Navy #1A3A5C, Accent Red #C0392B, Steel Blue #E8F4FD
+ * Primary Red #5c0609, Secondary Navy #1A3A5C, Accent Red #C0392B
  * All colors HSL.
  */
 
@@ -21,14 +21,14 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    /* Deep Navy Blue #1A3A5C */
-    --primary: 210 56% 23%;
+    /* Deep Red #5c0609 */
+    --primary: 358 88% 19%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 50% 32%;
+    --primary-glow: 358 88% 25%;
 
-    /* Light Steel Blue #E8F4FD */
-    --secondary: 207 86% 95%;
-    --secondary-foreground: 210 56% 23%;
+    /* Deep Navy Blue #1A3A5C */
+    --secondary: 210 56% 23%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
@@ -43,11 +43,11 @@
 
     --border: 210 20% 88%;
     --input: 210 20% 88%;
-    --ring: 210 56% 23%;
+    --ring: 358 88% 19%;
 
     --radius: 0.5rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(210 56% 18%) 0%, hsl(210 56% 28%) 60%, hsl(6 63% 46% / 0.85) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(358 88% 19%) 0%, hsl(358 88% 25%) 60%, hsl(6 63% 46% / 0.85) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 100%);
     --gradient-overlay: linear-gradient(180deg, hsl(210 56% 15% / 0.7) 0%, hsl(210 56% 15% / 0.85) 100%);
     --shadow-card: 0 8px 24px -12px hsl(210 56% 23% / 0.18);
@@ -76,8 +76,8 @@
     --popover-foreground: 0 0% 98%;
     --primary: 207 86% 80%;
     --primary-foreground: 210 56% 12%;
-    --secondary: 210 40% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 56% 23%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 210 40% 14%;
     --muted-foreground: 210 15% 70%;
     --accent: 6 70% 56%;
@@ -104,7 +104,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', system-ui, sans-serif;
-    @apply text-primary font-bold tracking-tight;
+    @apply text-secondary font-bold tracking-tight;
     line-height: 1.2;
   }
 
@@ -122,4 +122,26 @@
     box-shadow: var(--shadow-card);
   }
   .card-hover:hover { box-shadow: var(--shadow-elevated); }
+}
+
+@layer utilities {
+  @keyframes scroll-text {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .scrolling-text-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .scrolling-text {
+    display: inline-block;
+    animation: scroll-text 15s linear infinite;
+    padding-right: 100%;
+  }
 }

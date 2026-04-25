@@ -9,7 +9,7 @@ const Products = () => (
   <>
     <SEO
       title="Products & Services — Techcare General Trading"
-      description="Explore Techcare's full catalogue across 13 categories — construction, solar, food, safety, electrical, cables, auto parts and more."
+      description="Explore Techcare\'s full catalogue across 13 categories — construction, solar, food, safety, electrical, cables, auto parts and more."
     />
     <Breadcrumbs items={[{ label: "Products & Services" }]} />
 
@@ -28,30 +28,27 @@ const Products = () => (
 
     <section className="section">
       <div className="container-page grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {productCategories.map((c) => {
-          const Icon = c.icon;
-          return (
-            <Link
-              key={c.slug}
-              to={`/products/${c.slug}`}
-              className="group bg-card rounded-xl border border-border overflow-hidden card-hover flex flex-col"
-            >
-              <div className="bg-gradient-hero p-6">
-                <div className="h-12 w-12 rounded-lg bg-accent text-accent-foreground grid place-items-center shadow-accent">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-4 text-primary-foreground text-lg">{c.name}</h3>
-                <p className="text-xs text-primary-foreground/80 mt-1">{c.sector}</p>
-              </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <p className="text-sm text-muted-foreground flex-1">{c.description}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
-                  View Details <ArrowRight className="h-4 w-4" />
-                </span>
-              </div>
-            </Link>
-          );
-        })}
+        {productCategories.map((c) => (
+          <Link
+            key={c.slug}
+            to={`/products/${c.slug}`}
+            className="relative group rounded-xl overflow-hidden shadow-card"
+          >
+            <img
+              src={c.image}
+              alt={c.name}
+              className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-5">
+              <h3 className="text-white font-semibold text-lg">{c.name}</h3>
+              <p className="text-white/80 text-sm mt-1">{c.short}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
+                View Details <ArrowRight className="h-4 w-4" />
+              </span>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
 

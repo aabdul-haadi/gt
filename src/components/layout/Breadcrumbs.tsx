@@ -7,8 +7,8 @@ export const Breadcrumbs = ({ items }: { items: Crumb[] }) => {
   const location = useLocation();
   if (location.pathname === "/") return null;
   return (
-    <nav aria-label="Breadcrumb" className="bg-secondary/60 border-b border-border">
-      <div className="container-page py-3 flex items-center gap-1.5 text-xs text-muted-foreground">
+    <nav aria-label="Breadcrumb" className="bg-gray-100 border-b border-border">
+      <div className="container-page py-3 flex items-center gap-1.5 text-xs text-gray-500">
         <Link to="/" className="inline-flex items-center gap-1 hover:text-accent">
           <Home className="h-3.5 w-3.5" /> Home
         </Link>
@@ -18,7 +18,7 @@ export const Breadcrumbs = ({ items }: { items: Crumb[] }) => {
             {c.to ? (
               <Link to={c.to} className="hover:text-accent">{c.label}</Link>
             ) : (
-              <span className="text-foreground font-medium">{c.label}</span>
+              <span className="text-gray-800 font-medium">{c.label}</span>
             )}
           </span>
         ))}

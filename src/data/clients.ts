@@ -1,34 +1,34 @@
 export type ClientGroup = {
   sector: string;
-  clients: { name: string; note?: string }[];
+  clients: { id: number; name: string; note?: string }[];
 };
 
 export const clientGroups: ClientGroup[] = [
   {
     sector: "Hotels & Hospitality",
     clients: [
-      { name: "Sheraton" },
-      { name: "Jumeirah Hotels & Resorts" },
-      { name: "Radisson Hotels & Resorts" },
-      { name: "Fairmont Bab Al Bahr" },
-      { name: "St. Regis Hotels & Resorts" },
+      { id: 1, name: "Sheraton" },
+      { id: 2, name: "Jumeirah Hotels & Resorts" },
+      { id: 3, name: "Radisson Hotels & Resorts" },
+      { id: 4, name: "Fairmont Bab Al Bahr" },
+      { id: 5, name: "St. Regis Hotels & Resorts" },
     ],
   },
   {
     sector: "Construction & EPC",
     clients: [
-      { name: "Orascom Construction" },
-      { name: "Transgulf Readymix" },
-      { name: "Sahara Emirates" },
-      { name: "ADMM" },
+      { id: 6, name: "Orascom Construction" },
+      { id: 7, name: "Transgulf Readymix" },
+      { id: 8, name: "Sahara Emirates" },
+      { id: 9, name: "ADMM" },
     ],
   },
   {
     sector: "Education & Institutions",
     clients: [
-      { name: "Ethara" },
-      { name: "ERTH Abu Dhabi" },
-      { name: "Inspire Integrated" },
+      { id: 10, name: "Ethara" },
+      { id: 11, name: "ERTH Abu Dhabi" },
+      { id: 12, name: "Inspire Integrated" },
     ],
   },
 ];

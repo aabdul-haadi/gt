@@ -15,6 +15,20 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// @ts-ignore
+import constructionImg from "@/assets/products/construction.jpg";
+// @ts-ignore
+import foodImg from "@/assets/products/food.jpg";
+// @ts-ignore
+import solarImg from "@/assets/products/SOLAR-2.jpg";
+// @ts-ignore
+import toolsImg from "@/assets/products/tools.jpg";
+// @ts-ignore
+import paintImg from "@/assets/products/paint.jpg";
+// @ts-ignore
+import waterproofingImg from "@/assets/products/waterproofing.jpg";
+
+
 export type ProductCategory = {
   slug: string;
   name: string;
@@ -22,6 +36,7 @@ export type ProductCategory = {
   description: string;
   sector: string;
   icon: LucideIcon;
+  image: string;
   items: string[];
   highlights: string[];
 };
@@ -35,15 +50,16 @@ export const productCategories: ProductCategory[] = [
       "Comprehensive range of construction materials supplied to EPC contractors, fabricators and developers across the UAE.",
     sector: "EPC, Construction, Fabricators",
     icon: HardHat,
+    image: constructionImg,
     items: [
-      "Cement (OPC / SRC)",
+      "Cement",
       "Steel Rebar",
-      "Timber & Plywood",
+      "Timber",
       "Gypsum Board",
-      "Scaffolding Systems",
+      "Scaffolding",
       "Steel Mesh",
-      "Bricks & Blocks",
-      "Tiles & Ceramics",
+      "Bricks",
+      "Tiles",
     ],
     highlights: ["Bulk pricing", "Project-based delivery", "Spec compliance"],
   },
@@ -55,13 +71,16 @@ export const productCategories: ProductCategory[] = [
       "Premium-grade food products for hospitality, retail and HORECA channels — backed by full quality traceability.",
     sector: "Hospitality, Retail, HORECA",
     icon: Apple,
+    image: foodImg,
     items: [
       "Basmati Rice",
       "Sella Rice",
-      "Cumin & Turmeric",
-      "Walnut & Almond",
-      "Fresh Fruits & Vegetables",
-      "Fresh / Frozen Meat",
+      "Cumin",
+      "Turmeric",
+      "Walnut",
+      "Almond",
+      "Fruits & Vegetables",
+      "Fresh/Frozen Meat",
     ],
     highlights: ["HACCP-aligned sourcing", "Cold-chain options", "Bulk HORECA packs"],
   },
@@ -73,12 +92,13 @@ export const productCategories: ProductCategory[] = [
       "Industrial and commercial solar solutions including flexible panels, lithium batteries and inverters.",
     sector: "Energy, Commercial, Industrial",
     icon: Sun,
+    image: solarImg,
     items: [
-      "Mono / Poly Solar Panels",
+      "Solar Panels",
       "Flexible Solar Panels",
-      "Lithium Batteries (LiFePO₄)",
-      "On-grid / Off-grid Inverters",
-      "Industrial Solar Systems",
+      "Lithium Batteries",
+      "Inverters",
+      "Industrial Solar",
     ],
     highlights: ["Tier-1 brands", "Site survey support", "Long warranty"],
   },
@@ -90,12 +110,13 @@ export const productCategories: ProductCategory[] = [
       "Reliable tools and PPE for contractors and on-site teams — engineered for the demanding UAE jobsite.",
     sector: "Construction, Contractors",
     icon: Wrench,
+    image: toolsImg,
     items: [
       "Hand Tools",
       "Safety PPE",
-      "Concrete Mixers",
+      "Concrete Mixer",
       "Measuring Tools",
-      "Ladders & Access",
+      "Ladders",
     ],
     highlights: ["OEM warranty", "Same-day Dubai delivery"],
   },
@@ -107,11 +128,12 @@ export const productCategories: ProductCategory[] = [
       "Full spectrum of decorative and protective paints, primers and specialty finishes from leading brands.",
     sector: "Construction, Interior Design",
     icon: Paintbrush,
+    image: paintImg,
     items: [
-      "Oil / Water-based Paints",
-      "Primers & Sealers",
-      "Enamel Paints",
-      "Spray Paints",
+      "Oil/Water Paints",
+      "Primer",
+      "Enamel",
+      "Spray Paint",
       "Chalkboard Paint",
       "Jotun Solvent",
     ],
@@ -125,12 +147,13 @@ export const productCategories: ProductCategory[] = [
       "Engineered waterproofing systems for roofs, foundations and infrastructure — built to UAE climate spec.",
     sector: "Construction, Infrastructure",
     icon: Droplets,
+    image: waterproofingImg,
     items: [
-      "Polyurethane Coatings",
+      "Polyurethane",
       "EPDM Rubber",
       "Bituminous Membrane",
       "PVC Membrane",
-      "Fiber Glass Kits",
+      "Fiber Glass Kit",
     ],
     highlights: ["Tropical-climate rated", "Technical datasheets on request"],
   },
@@ -142,12 +165,14 @@ export const productCategories: ProductCategory[] = [
       "Certified PPE for oil & gas, construction and industrial environments — full head-to-toe protection.",
     sector: "Oil & Gas, Construction",
     icon: ShieldCheck,
+    // @ts-ignore
+    image: null,
     items: [
       "Safety Shoes",
-      "Goggles & Face Shields",
-      "Hi-Vis Jackets",
+      "Goggles",
+      "Jackets",
       "Chemical Safety Gear",
-      "Traffic Cones & Signage",
+      "Traffic Cones",
     ],
     highlights: ["EN / ANSI certified", "Bulk site kits"],
   },
@@ -159,11 +184,13 @@ export const productCategories: ProductCategory[] = [
       "Compliance-grade fireproofing materials for commercial and industrial fit-outs.",
     sector: "Construction, Compliance",
     icon: Flame,
+    // @ts-ignore
+    image: null,
     items: [
-      "Fire-rated Gypsum Board",
+      "Gypsum Board",
       "Spray Foam",
-      "Fire-rated Plywood",
-      "Stucco Systems",
+      "Plywood",
+      "Stucco",
       "Particle Board",
     ],
     highlights: ["Civil Defense compliant"],
@@ -176,7 +203,9 @@ export const productCategories: ProductCategory[] = [
       "Complete electrical fit-out supply: lighting, distribution, accessories and switchgear.",
     sector: "Commercial, Industrial",
     icon: Zap,
-    items: ["LED Lighting", "Circuit Breakers", "Switches & Sockets", "Distribution Boards"],
+    // @ts-ignore
+    image: null,
+    items: ["Lights", "Breakers", "Electrical Accessories"],
     highlights: ["Branded stock", "Project takeoff support"],
   },
   {
@@ -187,8 +216,10 @@ export const productCategories: ProductCategory[] = [
       "Genuine and aftermarket parts for fleet operators, workshops and resellers.",
     sector: "Automotive, Fleet Management",
     icon: Car,
+    // @ts-ignore
+    image: null,
     items: [
-      "Engine Components",
+      "Engine",
       "Transmission",
       "Suspension",
       "Fuel System",
@@ -203,13 +234,15 @@ export const productCategories: ProductCategory[] = [
     name: "Cables & Wire",
     short: "Power, control & data",
     description:
-      "Industrial and commercial cabling — power, control, data and accessories from trusted manufacturers.",
+      "Industrial and commercial cabling — power, control,. We are available 24/7 to assist you. data and accessories from trusted manufacturers.",
     sector: "Industrial, Electrical",
     icon: Cable,
+    // @ts-ignore
+    image: null,
     items: [
       "Rubber Cable",
       "Panel Cable",
-      "Fiber Optic Cable",
+      "Fiber Cable",
       "Cable Accessories",
       "Conduit Pipes",
     ],
@@ -222,7 +255,9 @@ export const productCategories: ProductCategory[] = [
     description:
       "Maintenance-grade mechanical tools for industrial workshops and field service teams.",
     sector: "Industrial, Maintenance",
-    icon: Cog,
+icon: Cog,
+    // @ts-ignore
+    image: null,
     items: [
       "Screwdrivers",
       "Pliers",
@@ -235,12 +270,14 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "general-goods",
-    name: "General Goods",
+    name: "General",
     short: "Appliances & commercial supply",
     description:
       "Home and commercial appliances, refrigeration, sanitary and water supply equipment.",
     sector: "General Commercial",
     icon: Home,
+    // @ts-ignore
+    image: null,
     items: [
       "Home Appliances",
       "Sanitary Appliances",

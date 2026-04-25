@@ -1,27 +1,38 @@
-import { Clock, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { QuoteDialog } from "@/components/QuoteDialog";
 import { Button } from "@/components/ui/button";
+import fomoBg from "@/assets/hero-warehouse.jpg";
 
 export const FomoBanner = () => (
-  <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
-    <div className="container-page py-14 md:py-16 grid md:grid-cols-[1fr_auto] gap-6 items-center">
-      <div>
-        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent-glow">
-          <Clock className="h-3.5 w-3.5" /> Limited Availability
-        </span>
-        <h2 className="mt-2 text-2xl md:text-3xl text-primary-foreground">
-          Book a Consultation Today — Limited Appointment Slots Available
+  <section className="relative isolate bg-slate-900 text-white">
+    {/* Background Image with Overlay */}
+    <img
+      src={fomoBg}
+      alt="Consultation background showing construction materials"
+      className="absolute inset-0 h-full w-full object-cover opacity-20"
+      width={1920}
+      height={1080}
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/70 to-transparent" />
+
+    {/* Content */}
+    <div className="relative container-page py-16 md:py-24 text-center">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+          Limited Consultation Slots Available
         </h2>
-        <p className="mt-2 opacity-90 max-w-2xl">
-          Get priority pricing on bulk orders. Our procurement specialists will
-          structure the right package for your project.
+        <p className="mt-4 text-lg md:text-xl text-slate-300">
+          Secure priority pricing on bulk orders. Our specialists are ready to assist with your project needs.
         </p>
+        <div className="mt-8">
+          <QuoteDialog title="Book a Consultation">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg">
+              Book a Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </QuoteDialog>
+        </div>
       </div>
-      <QuoteDialog title="Book a Consultation">
-        <Button size="lg" className="bg-accent hover:bg-accent-glow text-accent-foreground font-semibold shadow-accent">
-          Book Now <ArrowRight className="ml-1.5 h-4 w-4" />
-        </Button>
-      </QuoteDialog>
     </div>
   </section>
 );

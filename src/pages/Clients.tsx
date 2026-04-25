@@ -13,7 +13,7 @@ const Clients = () => (
     <Breadcrumbs items={[{ label: "Clients" }]} />
 
     <section className="bg-gradient-hero text-primary-foreground">
-      <div className="container-page py-16 md:py-20">
+      <div className="container-page pt-16 md:pt-20 pb-12 md:pb-16">
         <span className="eyebrow text-accent-glow">Our Clientele</span>
         <h1 className="mt-3 text-4xl md:text-5xl text-primary-foreground">
           Trusted by UAE’s Leading Organizations

@@ -5,20 +5,18 @@ import { productCategories } from "@/data/products";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground mt-16">
+    <footer className="bg-secondary text-secondary-foreground mt-16">
       <div className="container-page py-14 grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4 space-y-4">
-          <div className="flex items-center gap-2.5">
-            <div className="h-10 w-10 rounded-md bg-gradient-accent grid place-items-center font-display font-extrabold">
-              T
-            </div>
+          <Link to="/" className="flex items-center gap-2.5">
+            <img src="/logo.webp" alt="Techcare logo" className="h-12 w-12 rounded-full object-cover" />
             <div className="leading-tight">
               <div className="font-display font-extrabold text-base">TECHCARE</div>
               <div className="text-[11px] tracking-[0.18em] uppercase opacity-80">
                 General Trading
               </div>
             </div>
-          </div>
+          </Link>
           <p className="text-sm opacity-90 max-w-sm">
             ISO 9001:2015 certified UAE trading partner serving Power, Industrial,
             Oil & Gas, Construction and Commercial sectors since 2022.
@@ -52,7 +50,7 @@ export const Footer = () => {
         </div>
 
         <div className="lg:col-span-3">
-          <h4 className="text-sm font-display font-bold uppercase tracking-wider mb-4">
+          <h4 className="text-sm font-display font-bold uppercase tracking-wider text-primary-foreground mb-4">
             Categories
           </h4>
           <ul className="space-y-2 text-sm opacity-90 columns-1">
@@ -67,7 +65,7 @@ export const Footer = () => {
         </div>
 
         <div className="lg:col-span-3">
-          <h4 className="text-sm font-display font-bold uppercase tracking-wider mb-4">
+          <h4 className="text-sm font-display font-bold uppercase tracking-wider text-primary-foreground mb-4">
             Get in Touch
           </h4>
           <ul className="space-y-3 text-sm opacity-90">
