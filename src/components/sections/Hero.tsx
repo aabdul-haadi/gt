@@ -3,21 +3,17 @@ import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/QuoteDialog";
 import heroImg from "@/assets/hero-warehouse.jpg";
-import { useState } from "react";
 
 export const Hero = () => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-
   return (
     <section className="relative isolate bg-slate-900">
-      <div style={{ visibility: isImageLoaded ? 'visible' : 'hidden' }}>
+      <div>
         <img
           src={heroImg}
           alt="Warehouse with construction materials and steel supplies in Dubai, illustrating a general trading company's inventory."
           className="absolute inset-0 h-full w-full object-cover opacity-40"
           width={1920}
           height={1080}
-          onLoad={() => setIsImageLoaded(true)}
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent" />
