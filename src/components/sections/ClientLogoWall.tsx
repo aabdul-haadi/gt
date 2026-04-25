@@ -9,13 +9,14 @@ const allClients = [...clientsTop, ...clientsBottom];
 const ClientLogo = ({ client }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  // Dynamically import the image
-  const image = `/src/assets/brand-icons/brand-${client.id}.png`;
+  const getImageUrl = (name) => {
+      return new URL(`../assets/brand-icons/${name}`, import.meta.url).href
+  }
 
   return (
     <div className="mx-6 flex h-28 w-44 items-center justify-center">
       <img 
-        src={image} 
+        src={getImageUrl(`brand-${client.id}.png`)} 
         alt={client.name} 
         className="max-h-24" 
         style={{ visibility: isImageLoaded ? 'visible' : 'hidden' }}
